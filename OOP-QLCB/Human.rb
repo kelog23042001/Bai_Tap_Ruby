@@ -1,24 +1,24 @@
 class CanBo
-    attr_accessor :name, :age, :gender, :address
+    attr_accessor :name_232, :age_232, :gender, :address
     def initialize()
-        @name = name
-        @age = age
+        @name_232 = name_232
+        @age_232 = age_232
         @gender = gender
         @address = address
     end
 
     def input_infor
         print "Nhập tên: "
-        @name = gets.chop
+        @name_232 = gets.chop
         print "Nhập tuổi: "
-        @age = gets.chop.to_i
+        @age_232 = gets.chop.to_i
         print "Nhập giới tính: "
         @gender = gets.chop
         print "Nhập địa chỉ: "
         @address = gets.chop
     end
     def display
-        puts "Tên: #{@name} - Tuổi: #{@age} - Giới tính: #{@gender} - Địa chỉ: #{@address}"
+        puts "Tên: #{@name_232} - Tuổi: #{@age_232} - Giới tính: #{@gender} - Địa chỉ: #{@address}"
     end
 end
 
@@ -49,7 +49,7 @@ class KySu < CanBo
     def input_infor
         super
         print "Nhập ngành đào tạo: "
-        self.nganhDT = gets.chop.to_i
+        self.nganhDT = gets.chop
     end
     def display
         super
@@ -66,7 +66,7 @@ class NhanVien < CanBo
     def input_infor
         super
         print "Nhập công việc: "
-        self.conngviec = gets.chop.to_i
+        self.conngviec = gets.chop
     end
     def display
         super
@@ -101,9 +101,9 @@ class QLCb
     end
 
     puts "\nNhập tên cần tìm kiếm: "
-    fname = gets.chop
+    fname_232 = gets.chop
         for i in (0..humanlist.length - 1) do
-            if(humanlist[i].name == fname)
+            if(humanlist[i].name_232 == fname_232)
                humanlist[i].display 
             end
         end 

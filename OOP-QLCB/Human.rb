@@ -1,10 +1,10 @@
 class CanBo
-    attr_accessor :name_232, :age_232, :gender, :address
+    attr_accessor :name_232, :age_232, :gender_232, :address_232
     def initialize()
         @name_232 = name_232
         @age_232 = age_232
-        @gender = gender
-        @address = address
+        @gender_232 = gender_232
+        @address_232 = address_232
     end
 
     def input_infor
@@ -13,64 +13,64 @@ class CanBo
         print "Nhập tuổi: "
         @age_232 = gets.chop.to_i
         print "Nhập giới tính: "
-        @gender = gets.chop
+        @gender_232 = gets.chop
         print "Nhập địa chỉ: "
-        @address = gets.chop
+        @address_232 = gets.chop
     end
     def display
-        puts "Tên: #{@name_232} - Tuổi: #{@age_232} - Giới tính: #{@gender} - Địa chỉ: #{@address}"
+        puts "Tên: #{@name_232} - Tuổi: #{@age_232} - Giới tính: #{@gender_232} - Địa chỉ: #{@address_232}"
     end
 end
 
 class CongNhan < CanBo
-    attr_accessor :rank
+    attr_accessor :capbac_232_232
   
     def initialize()
         super()
-        self.rank = rank
+        self.capbac_232_232 = capbac_232_232
     end
     def input_infor
         super
         print "Nhập cấp bậc (1 - 10): "
-        self.rank = gets.chop.to_i
+        self.capbac_232_232 = gets.chop.to_i
     end
     def display
         super
-        puts "Cấp bậc: #{@rank}"
+        puts "Cấp bậc: #{@capbac_232_232}"
     end
 end
 
 class KySu < CanBo
-    attr_accessor :nganhDT
+    attr_accessor :nganhDT_232
     def initialize()
         super()
-        self.nganhDT = nganhDT
+        self.nganhDT_232 = nganhDT_232
     end
     def input_infor
         super
         print "Nhập ngành đào tạo: "
-        self.nganhDT = gets.chop
+        self.nganhDT_232 = gets.chop
     end
     def display
         super
-        puts "Ngành đào tạo: #{@nganhDT}"
+        puts "Ngành đào tạo: #{@nganhDT_232}"
     end
 end
 
 class NhanVien < CanBo
-    attr_accessor :conngviec
+    attr_accessor :congviec_232
     def initialize()
         super()
-        self.conngviec = conngviec
+        self.congviec_232 = congviec_232
     end
     def input_infor
         super
         print "Nhập công việc: "
-        self.conngviec = gets.chop
+        self.congviec_232 = gets.chop
     end
     def display
         super
-        puts "Công việc: #{@conngviec}"
+        puts "Công việc: #{@congviec_232}"
     end
 end
 
@@ -78,33 +78,33 @@ class QLCb
    
 
     puts "Nhập thông tin công nhân: "
-    cn = CongNhan.new
-    cn.input_infor
+    cn_232 = CongNhan.new
+    cn_232.input_infor
 
     puts "\nNhập thông tin kỹ sư: "
-    ks = KySu.new
-    ks.input_infor
+    ks_232 = KySu.new
+    ks_232.input_infor
 
     puts "\nNhập thông tin nhân viên"
-    nv = NhanVien.new
-    nv.input_infor
+    nv_232 = NhanVien.new
+    nv_232.input_infor
 
-    humanlist = []
+    humanlist_232 = []
 
-    humanlist << cn
-    humanlist << ks
-    humanlist << nv
+    humanlist_232 << cn_232
+    humanlist_232 << ks_232
+    humanlist_232 << nv_232
 
     puts "Danh sách các cán bộ: "
-    humanlist.each do |val|
+    humanlist_232.each do |val|
         puts "#{val.display}"
     end
 
     puts "\nNhập tên cần tìm kiếm: "
     fname_232 = gets.chop
-        for i in (0..humanlist.length - 1) do
-            if(humanlist[i].name_232 == fname_232)
-               humanlist[i].display 
+        for i in (0..humanlist_232.length - 1) do
+            if(humanlist_232[i].name_232 == fname_232)
+               humanlist_232[i].display 
             end
         end 
 end

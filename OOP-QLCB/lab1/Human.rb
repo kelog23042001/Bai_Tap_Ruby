@@ -74,43 +74,72 @@ class NhanVien < CanBo
     end
 end
 
-class QLCb
-   
-
-    puts "Nhập thông tin công nhân: "
-    cn_232 = CongNhan.new
-    cn_232.input_infor
-
-    puts "\nNhập thông tin kỹ sư: "
-    ks_232 = KySu.new
-    ks_232.input_infor
-
-    puts "\nNhập thông tin nhân viên"
-    nv_232 = NhanVien.new
-    nv_232.input_infor
-
+class QLCB
+    attr_accessor :humanlist_232
+    def initialize
+    end
     humanlist_232 = []
 
-    humanlist_232 << cn_232
-    humanlist_232 << ks_232
-    humanlist_232 << nv_232
+    def addList(cb_232)
+        humanlist_232 << cb_232
+    end 
 
-    puts "Danh sách các cán bộ: "
-    humanlist_232.each do |val|
-        puts "#{val.display}"
+    def showHuman(humanlist_232)
+        humanlist_232.each do |val|
+            puts "#{val.display}"
+        end
     end
-
-    puts "\nNhập tên cần tìm kiếm: "
-    fname_232 = gets.chop
-        for i in (0..humanlist_232.length - 1) do
-            if(humanlist_232[i].name_232 == fname_232)
-               humanlist_232[i].display 
-            end
-        end 
+    def findName(name)
+       
+            for i in (0..humanlist_232.length - 1) do
+                if(humanlist_232[i].name_232 == name)
+                   humanlist_232[i].display 
+                end
+            end 
+    end
+   
 end
 
+qlcb_232 = QLCB.new()
+
+humanlist_232 = []
+
+puts "Nhập thông tin công nhân: "
+cn_232 = CongNhan.new
+cn_232.input_infor
+# qlcb_232.addList(cn_232)
+humanlist_232 << cn_232
+
+puts "\nNhập thông tin kỹ sư: "
+ks_232 = KySu.new
+ks_232.input_infor
+# qlcb_232.addList(ks_232)
+humanlist_232 << ks_232
+
+puts "\nNhập thông tin nhân viên"
+nv_232 = NhanVien.new
+nv_232.input_infor
+# qlcb_232.addList(nv_232)
+humanlist_232 << nv_232
+
+# puts "Danh sách các cán bộ: "
+# qlcb_232.showHuman(humanlist_232)
+type = "KySu"
+humanlist_232.each do |document| 
+    if document.class.name == type 
+      document.display()
+    end
+   
+  end
+# puts humanlist_232.class.name
 
 
+# puts "\nNhập tên cần tìm kiếm: "
 
-
-
+# fname_232 = gets.chop
+#     # for i in (0..humanlist_232.length - 1) do
+#     #     if(humanlist_232[i].name_232 == fname_232)
+#     #        humanlist_232[i].display 
+#     #     end
+#     # end 
+# findName(fname_232)
